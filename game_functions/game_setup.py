@@ -34,7 +34,13 @@ def choose_random_word(word_list):
 #   if we input the word="Ice Cream", the set will be {"i", "c", "e", "c", "r", "a", "m"}
 
 def initialize_letters_to_be_guessed(word):
-    ...
+    letters_set = set()
+    for letter in word:
+        if letter.isalpha():
+            letters_set.add(letter.lower())
+        else:
+            continue
+    return letters_set
 
 
 # --- FUNCTION 4 ---
