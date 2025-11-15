@@ -7,7 +7,8 @@
 # The function will return the user's input (as lowercase).
 
 def get_letter_from_user():
-    ...
+    inp = input()
+    return inp.lower()
 
 
 # --- FUNCTION 2 ---
@@ -16,8 +17,11 @@ def get_letter_from_user():
 # Return True if valid, False otherwise.
 # (you can use .isalpha())
 
-def is_valid_letter(input_letter):
-    ...
+def is_valid_letter(input_letter: str):
+    if len(input_letter) == 1 and input_letter.isalpha() == True:
+        return True
+    else:
+        return False
 
 
 # --- FUNCTION 3 ---
@@ -26,7 +30,10 @@ def is_valid_letter(input_letter):
 # Return True if the letter is in the set, False otherwise.
 
 def is_already_guessed(letter, guessed_letters):
-    ...
+    for i in guessed_letters:
+        if i == letter:
+            return True
+    return False
 
 
 # --- FUNCTION 4 ---
@@ -43,56 +50,56 @@ if __name__ == "__main__":
     ### --- Test Function 1: get_letter_from_user --- ###
     # This function requires user input, so test it manually by uncommenting:
 
-    ###Test 1.1###
+    # ##Test 1.1###
     # print("Please enter a letter:")
     # letter = get_letter_from_user()
     # print(f"You entered: {letter}")  # Expected: lowercase version of your input
 
     ### --- Test Function 2: is_valid_letter --- ###
 
-    ###Test 2.1###
+    # ##Test 2.1###
     # result = is_valid_letter("G")
     # print(result)  # Expected: True
-
-    ###Test 2.2###
+    #
+    # ##Test 2.2###
     # result = is_valid_letter("a")
     # print(result)  # Expected: True
-
-    ###Test 2.3###
+    #
+    # ##Test 2.3###
     # result = is_valid_letter("tar")
     # print(result)  # Expected: False
-
-    ###Test 2.4###
+    #
+    # ##Test 2.4###
     # result = is_valid_letter("y-")
     # print(result)  # Expected: False
-
-    ###Test 2.5###
+    #
+    # ##Test 2.5###
     # result = is_valid_letter("")
     # print(result)  # Expected: False
-
-    ###Test 2.6###
+    #
+    # ##Test 2.6###
     # result = is_valid_letter("5")
     # print(result)  # Expected: False
-
-    ###Test 2.7###
+    #
+    # ##Test 2.7###
     # result = is_valid_letter(" ")
     # print(result)  # Expected: False
 
     ### --- Test Function 3: is_already_guessed --- ###
 
-    ###Test 3.1###
+    ##Test 3.1###
     # result = is_already_guessed("a", {"a", "b", "c"})
     # print(result)  # Expected: True
-
-    ###Test 3.2###
+    #
+    # ##Test 3.2###
     # result = is_already_guessed("d", {"a", "b", "c"})
     # print(result)  # Expected: False
-
-    ###Test 3.3###
+    #
+    # ##Test 3.3###
     # result = is_already_guessed("x", set())
     # print(result)  # Expected: False
-
-    ###Test 3.4###
+    #
+    # ##Test 3.4###
     # result = is_already_guessed("b", {"a", "b", "c", "d", "e"})
     # print(result)  # Expected: True
 
