@@ -11,6 +11,7 @@ import random
 def choose_random_word(word_list):
     # OP1
     # random.choice(...)
+    return random.choice(word_list)
 
     # OP2
     # random.randrange()
@@ -22,8 +23,13 @@ def choose_random_word(word_list):
 # # Write a function that creates the initial display for a word.
 # # It should return a string with underscores separated by spaces (e.g., "_ _ _ _").
 # # The number of underscores should match the length of the word.
-# def initialize_secret_word_display(word):
-#     ...
+def initialize_secret_word_display(word):
+    new_list = []
+    for i in word:
+        new_list.append("_ ")
+    secret_word = " ".join(new_list)
+    print(secret_word)
+
 
 
 # --- FUNCTION 3 ---
@@ -47,24 +53,27 @@ def initialize_letters_to_be_guessed(word):
 # Write a function that returns the alphabet as a list/tuple.
 # So if the input is "abcde", the function will return ["a", "b", "c", "d", "e"]
 def initialize_alphabet_display(alphabet: str):
-    ...
+    new_list = []
+    for i in alphabet:
+        new_list.append(i)
+    return new_list
 
 
 # Test your functions here!
 if __name__ == "__main__":
     ### --- Test Function 1: choose_random_word --- ###
 
-    ###Test 1.1###
+    # ###Test 1.1###
     # test_words = ["python", "hangman", "programming"]
     # result = choose_random_word(test_words)
     # print(result in test_words)  # Expected: True
-
-    ###Test 1.2###
+    #
+    # ##Test 1.2###
     # test_words = ["apple", "banana", "cherry", "date"]
     # result = choose_random_word(test_words)
     # print(result in test_words)  # Expected: True
-
-    ###Test 1.3 - Single word list###
+    #
+    # ##Test 1.3 - Single word list###
     # test_words = ["onlyword"]
     # result = choose_random_word(test_words)
     # print(result)  # Expected: "onlyword"
@@ -93,25 +102,28 @@ if __name__ == "__main__":
 
     ### --- Test Function 3: initialize_alphabet_display --- ###
 
-    ###Test 3.1 - English alphabet###
+    # ##Test 3.1 - English alphabet###
     # alphabet = "abcdefghijklmnopqrstuvwxyz"
     # result = initialize_alphabet_display(alphabet)
     # print(result)  # Expected: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    ###Test 3.2 - Short alphabet###
+    # ##Test 3.2 - Short alphabet###
     # alphabet = "abcdefg"
     # result = initialize_alphabet_display(alphabet)
     # print(result)  # Expected: ["a", "b", "c", "d", "e", "f", "g"]
 
-    ###Test 3.3 - Hebrew alphabet###
+    # ##Test 3.3 - Hebrew alphabet###
     # alphabet = "אבגדהוזחטי"
     # result = initialize_alphabet_display(alphabet)
     # print(result)  # Expected: ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י"]
 
-    ###Test 3.4 - Check return type###
+    # ##Test 3.4 - Check return type###
     # alphabet = "abc"
     # result = initialize_alphabet_display(alphabet)
     # print(type(result))  # Expected: <class 'list'> or <class 'tuple'>
+
+    # # Function 2 Test
+    # initialize_secret_word_display("ariel")
 
     pass
 
