@@ -7,10 +7,12 @@
 # Use the stages from the "ascii_art.py" file.
 
 from common.ascii_art import hangman_7_stages
+from game_logic import alphabet_display_with_guessed_letters_marked
 
 
 def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
     ...
+
 
 
 # --- FUNCTION 2 ---
@@ -34,7 +36,7 @@ def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts
 # Example: "Congratulations! You guessed the word: python"
 
 def show_win_message(word):
-    ...
+    print(f"Congratulations! You guessed the word:{word} ")
 
 
 # --- FUNCTION 4 ---
@@ -42,7 +44,7 @@ def show_win_message(word):
 # Example: "Game Over! The word was: python"
 
 def show_lose_message(word):
-    ...
+    print(f"Game Over! the word was: {word}")
 
 
 # Test your functions here!
@@ -89,18 +91,18 @@ if __name__ == "__main__":
 
     ### --- Test Function 3: show_win_message --- ###
 
-    ###Test 3.1###
+    ##Test 3.1###
     # show_win_message("python")
 
-    ###Test 3.2###
+    ##Test 3.2###
     # show_win_message("hangman")
 
     ### --- Test Function 4: show_lose_message --- ###
 
-    ###Test 4.1###
+    ##Test 4.1###
     # show_lose_message("python")
 
-    ###Test 4.2###
+    ##Test 4.2###
     # show_lose_message("secret")
 
     pass
