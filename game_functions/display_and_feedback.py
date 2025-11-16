@@ -14,7 +14,6 @@ def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
     ...
 
 
-
 # --- FUNCTION 2 ---
 # Write a function that displays the current game status.
 # It should print: current display, alphabet with strikethroughs, and attempts remaining.
