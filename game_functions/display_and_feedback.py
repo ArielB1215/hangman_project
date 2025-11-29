@@ -8,8 +8,8 @@
 
 from hangman_project.common.ascii_art import hangman_7_stages
 # from common.ascii_art import hangman_7_stages
-from game_logic import alphabet_display_with_guessed_letters_marked
-from game_logic import get_hidden_word_with_visible_guessed_letters
+from hangman_project.game_functions.game_logic import alphabet_display_with_guessed_letters_marked
+from hangman_project.game_functions.game_logic import get_hidden_word_with_visible_guessed_letters
 
 def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
     print(hangman_art[incorrect_guesses])

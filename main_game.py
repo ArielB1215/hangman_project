@@ -62,10 +62,20 @@ def main():
             # Correct guess
             # Update and remove correct letter from letters_to_be_guessed
             game_logic.update_letters_to_be_guessed(secret_letters_to_be_guessed, letter_from_input)
+            if game_state.check_win_condition(hidden_letters=secret_letters_to_be_guessed):
+                display_and_feedback.show_win_message(secret_word)
         else:
             # Incorrect guess
             # add +1 to incorrect guesses
             incorrect_guesses_count += 1
+            display_and_feedback.show_hangman(incorrect_guesses=incorrect_guesses_count)
+            if game_state.check_lose_condition(attempts_remaining=max_number_of_guesses - incorrect_guesses_count):
+                display_and_feedback.show_lose_message(secret_word)
+
+        # if game_state.check_win_condition(hidden_letters=user_guessed_letters):
+            # display_and_feedback.show_win_message(secret_word)
+        # elif game_state.check_lose_condition(attempts_remaining=max_number_of_guesses - incorrect_guesses_count):
+            # display_and_feedback.show_lose_message(secret_word)
 
         display_and_feedback.display_game_status(
             letters_alphabet=list_of_alphabet_letters,

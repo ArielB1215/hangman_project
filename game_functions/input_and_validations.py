@@ -50,6 +50,8 @@ def get_valid_guess(guessed_letters: set):
         user_input = get_letter_from_user()
         if is_valid_letter(user_input) == True and is_already_guessed(user_input,guessed_letters) == False:
             return user_input
+        else:
+            print("Letter is invalid or have been guessed already ): ")
 
 # Test your functions here!
 if __name__ == "__main__":
