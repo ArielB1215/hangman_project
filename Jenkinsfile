@@ -15,11 +15,11 @@ pipeline {
             }
         }
 
-        // stage('Docker Build') {
-        //     steps {
-        //         sh 'export DOCKER_HOST=tcp://host.docker.internal:2375 && docker build -t test:1.0 .'
-        //     }
-        // }
+        stage('Docker Build') {
+            steps {
+                sh 'docker run -it arielbm5911/hangman_project:1.0'
+            }
+        }
         
         // stage('Docker Push') {
         //     steps {
