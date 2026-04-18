@@ -21,14 +21,19 @@ pipeline {
             }
         }
         
-       stage('Docker Push'){
-            steps{
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]){
-                    sh '''
-                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-                    docker push ${arielbm5911/hangman_project}:latest
-                    '''
-                }
+    //    stage('Docker Push'){
+    //         steps{
+    //             withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]){
+    //                 sh '''
+    //                 echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+    //                 docker push ${arielbm5911/hangman_project}:latest
+    //                 '''
+    //             }
+    //         }
+    //     }
+        stage('Docker Run') {
+            steps {
+                sh 'export DOCKER_HOST=tcp://host.docker.internal:2375 && docker run -it arielbm5911/hangman_project:1.0'
             }
         }
     }
