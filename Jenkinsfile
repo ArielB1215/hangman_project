@@ -21,10 +21,15 @@ pipeline {
             }
         }
         
-        // stage('Docker Push') {
-        //     steps {
-        //         sh 'docker push berezovsky8/test-june:1.0'
-        //     }
-        // }
+       stage('Docker Push'){
+            steps{
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]){
+                    sh '''
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    docker push ${arielbm5911/hangman_project}:latest
+                    '''
+                }
+            }
+        }
     }
 }
